@@ -1,5 +1,14 @@
 {
-  "private": true,
+  "name": "tailwind-vue-starter",
+  "version": "1.0.0",
+  "description": "A free and open-source starter project to help you get started with the core Flowbite Library components and Vue 3",
+  "license": "MIT",
+  "repository": "https://github.com/themesberg/tailwind-vue-starter",
+  "homepage": "https://flowbite.com/docs/getting-started/vue/",
+  "contributors": [
+    "Zoltán Szőgyényi (https://twitter.com/zoltanszogyenyi)"
+  ],
+  "author": "Bergside Inc.",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,6 +22,6 @@
     "nuxt": "3.0.0"
   },
   "dependencies": {
-    "flowbite-ts-test": "^1.7.1"
+    "flowbite": "^1.6.0"
   }
 }
