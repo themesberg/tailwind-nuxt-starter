@@ -11,5 +11,8 @@
     "@nuxt/postcss8": "^1.1.3",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "flowbite-ts-test": "^1.7.1"
   }
 }
