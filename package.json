@@ -22,6 +22,6 @@
     "nuxt": "3.0.0"
   },
   "dependencies": {
-    "flowbite-ts-test": "^1.8.0"
+    "flowbite": "^1.6.1"
   }
 }

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import { initModals, initTooltips } from 'flowbite-ts-test'
+import { initModals, initTooltips } from 'flowbite'
 
 // initialize components based on data attribute selectors
 onMounted(() => {
