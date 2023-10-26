@@ -1,7 +1,10 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Carousel } from 'flowbite'
+import { Carousel } from 'flowbite-2.0'
 onMounted(() => {
+
+    const carouselElement = document.getElementById('carousel-example');
+
     const items = [
         {
             position: 0,
@@ -59,7 +62,7 @@ onMounted(() => {
         }
     };
     if (document.getElementById('carousel-item-1')) {
-        const carousel = new Carousel(items, options);
+        const carousel = new Carousel(carouselElement, items, options);
         carousel.cycle()
         // set event listeners for prev and next buttons
         const prevButton = document.getElementById('data-carousel-prev');
@@ -75,7 +78,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-2xl p-4 mx-auto">
+  <div id="carousel-example" class="max-w-2xl p-4 mx-auto">
         <div class="relative">
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96">

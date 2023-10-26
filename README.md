@@ -80,7 +80,7 @@ For example, here's how would initialize all of the modals inside your Vue templ
 ```javascript
 <script setup>
 import { onMounted } from 'vue'
-import { initModals } from 'flowbite'
+import { initModals } from 'flowbite-2.0'
 
 // initialize components based on data attribute selectors
 onMounted(() => {
@@ -110,7 +110,7 @@ import {
     initModals, 
     initPopovers, 
     initTabs, 
-    initTooltips } from 'flowbite'
+    initTooltips } from 'flowbite-2.0'
 
 // initialize components based on data attribute selectors
 onMounted(() => {
@@ -134,7 +134,7 @@ Alternatively, you can also use `initFlowbite()` to initialise them all:
 ```javascript
 <script setup>
 import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
+import { initFlowbite } from 'flowbite-2.0'
 
 // initialize components based on data attribute selectors
 onMounted(() => {
@@ -154,7 +154,7 @@ To make the component interactive we need to import the Modal object from Flowbi
 ```javascript
 <script setup>
 import { onMounted } from 'vue'
-import { Modal } from 'flowbite'
+import { Modal } from 'flowbite-2.0'
 
 onMounted(() => {
     // setup available elements
@@ -201,8 +201,8 @@ Flowbite also supports TypeScript as of v1.6.0 and it allows use to use type dec
 You can import these types or interfaces like this:
 
 ```javascript
-import { Modal } from 'flowbite'
-import type { ModalOptions, ModalInterface } from 'flowbite'
+import { Modal } from 'flowbite-2.0'
+import type { ModalOptions, ModalInterface } from 'flowbite-2.0'
 
 // other code
 ```
@@ -230,8 +230,8 @@ Using types can be very benefitial because it makes sure that you only use the a
 Here's the full code using types with TypeScript:
 
 ```javascript
-import { Modal } from 'flowbite'
-import type { ModalOptions, ModalInterface } from 'flowbite'
+import { Modal } from 'flowbite-2.0'
+import type { ModalOptions, ModalInterface } from 'flowbite-2.0'
 
 const $buttonElement: HTMLElement = document.querySelector('#button');
 const $modalElement: HTMLElement = document.querySelector('#modal');
