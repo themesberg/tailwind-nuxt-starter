@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Drawer } from 'flowbite-2.0'
+import { Drawer } from 'flowbite'
 onMounted(() => {
    // set the drawer menu element
     const $targetEl = document.getElementById('drawer-example');
