@@ -1,40 +1,44 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Drawer } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-   // set the drawer menu element
-    const $targetEl = document.getElementById('drawer-example');
-    const $drawerHideButton = document.getElementById('drawer-hide-button');
-    // options with default values
-    const options = {
-    placement: 'right',
-    backdrop: true,
-    bodyScrolling: false,
-    edge: false,
-    edgeOffset: '',
-    backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
-    onHide: () => {
-        console.log('drawer is hidden');
-    },
-    onShow: () => {
-        console.log('drawer is shown');
-    },
-    onToggle: () => {
-        console.log('drawer has been toggled');
-    }
-    };
-    if ($targetEl) {
-        /*
-        * targetEl: required
-        * options: optional
-        */
-        const drawer = new Drawer($targetEl, options);
-        // show the drawer
-        drawer.show();
-        $drawerHideButton.addEventListener('click', () => {
-            drawer.hide();
-        })
-    }
+
+    useFlowbite((flowbite) => {
+        // set the drawer menu element
+        const $targetEl = document.getElementById('drawer-example');
+        const $drawerHideButton = document.getElementById('drawer-hide-button');
+        // options with default values
+        const options = {
+        placement: 'right',
+        backdrop: true,
+        bodyScrolling: false,
+        edge: false,
+        edgeOffset: '',
+        backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30',
+        onHide: () => {
+            console.log('drawer is hidden');
+        },
+        onShow: () => {
+            console.log('drawer is shown');
+        },
+        onToggle: () => {
+            console.log('drawer has been toggled');
+        }
+        };
+        if ($targetEl) {
+            /*
+            * targetEl: required
+            * options: optional
+            */
+            const drawer = new Drawer($targetEl, options);
+            // show the drawer
+            drawer.show();
+            $drawerHideButton.addEventListener('click', () => {
+                drawer.hide();
+            })
+        }
+    })
+
 });
 </script>
 

@@ -1,21 +1,25 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Modal } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-    const $buttonElement = document.querySelector('#button');
-    const $modalElement = document.querySelector('#modal');
-    const $closeButton = document.querySelector('#closeButton');
-    const modalOptions = {
-        backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40'
-    }
-    if ($modalElement) {
-        const modal = new Modal($modalElement, modalOptions);
-        $buttonElement.addEventListener('click', () => modal.toggle());
-        $closeButton.addEventListener('click', () => modal.hide());
-        
-        // programatically show
-        // modal.show();
-    }
+
+    useFlowbite((flowbite) => {
+        const $buttonElement = document.querySelector('#button');
+        const $modalElement = document.querySelector('#modal');
+        const $closeButton = document.querySelector('#closeButton');
+        const modalOptions = {
+            backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40'
+        }
+        if ($modalElement) {
+            const modal = new Modal($modalElement, modalOptions);
+            $buttonElement.addEventListener('click', () => modal.toggle());
+            $closeButton.addEventListener('click', () => modal.hide());
+            
+            // programatically show
+            // modal.show();
+        }
+    })
+
 })
 </script>
 

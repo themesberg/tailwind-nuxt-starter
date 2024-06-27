@@ -1,32 +1,36 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Dismiss } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-   // target element that will be dismissed
-    const $targetEl = document.getElementById('targetElement');
-    // optional trigger element
-    const $triggerEl = document.getElementById('triggerElement');
-    // options object
-    const options = {
-    transition: 'transition-opacity',
-    duration: 1000,
-    timing: 'ease-out',
-    // callback functions
-    onHide: (context, targetEl) => {
-        console.log('element has been dismissed')
-        console.log(targetEl)
-    }
-    };
-    if ($targetEl) {
-        /*
-        * targetEl: required
-        * triggerEl: optional
-        * options: optional
-        */
-        const dismiss = new Dismiss($targetEl, $triggerEl, options);
-        // programatically hide it
-        // dismiss.hide();
-    }
+
+    useFlowbite((flowbite) => {
+        // target element that will be dismissed
+        const $targetEl = document.getElementById('targetElement');
+        // optional trigger element
+        const $triggerEl = document.getElementById('triggerElement');
+        // options object
+        const options = {
+        transition: 'transition-opacity',
+        duration: 1000,
+        timing: 'ease-out',
+        // callback functions
+        onHide: (context, targetEl) => {
+            console.log('element has been dismissed')
+            console.log(targetEl)
+        }
+        };
+        if ($targetEl) {
+            /*
+            * targetEl: required
+            * triggerEl: optional
+            * options: optional
+            */
+            const dismiss = new Dismiss($targetEl, $triggerEl, options);
+            // programatically hide it
+            // dismiss.hide();
+        }
+    })
+
 })
 </script>
 

@@ -1,32 +1,36 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Tooltip } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-   // set the tooltip content element
-    const $targetEl = document.getElementById('tooltipContent');
-    // set the element that trigger the tooltip using hover or click
-    const $triggerEl = document.getElementById('tooltipButton');
-    // options with default values
-    const options = {
-    placement: 'top',
-    triggerType: 'hover',
-    onHide: () => {
-        console.log('tooltip is shown');
-    },
-    onShow: () => {
-        console.log('tooltip is hidden');
-    }
-    };
-    if ($targetEl) {
-        /*
-        * targetEl: required
-        * triggerEl: required
-        * options: optional
-        */
-        const tooltip = new Tooltip($targetEl, $triggerEl, options);
-        // show the tooltip
-        tooltip.show();
-    }
+
+    useFlowbite((flowbite) => {
+        // set the tooltip content element
+        const $targetEl = document.getElementById('tooltipContent');
+        // set the element that trigger the tooltip using hover or click
+        const $triggerEl = document.getElementById('tooltipButton');
+        // options with default values
+        const options = {
+        placement: 'top',
+        triggerType: 'hover',
+        onHide: () => {
+            console.log('tooltip is shown');
+        },
+        onShow: () => {
+            console.log('tooltip is hidden');
+        }
+        };
+        if ($targetEl) {
+            /*
+            * targetEl: required
+            * triggerEl: required
+            * options: optional
+            */
+            const tooltip = new Tooltip($targetEl, $triggerEl, options);
+            // show the tooltip
+            tooltip.show();
+        }
+    })
+
 })
 </script>
 

@@ -1,33 +1,37 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Dropdown } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-   // set the dropdown menu element
-    const $targetEl = document.getElementById('dropdownMenu');
-    // set the element that trigger the dropdown menu on click
-    const $triggerEl = document.getElementById('dropdownButton');
-    // options with default values
-    const options = {
-    placement: 'bottom',
-    offsetSkidding: 0,
-    offsetDistance: 10,
-    onHide: () => {
-        console.log('dropdown has been hidden');
-    },
-    onShow: () => {
-        console.log('dropdown has been shown');
-    }
-    };
-    if ($targetEl) {
-        /*
-        * targetEl: required
-        * triggerEl: required
-        * options: optional
-        */
-        const dropdown = new Dropdown($targetEl, $triggerEl, options);
-        // show the dropdown
-        dropdown.show();
-    }
+
+    useFlowbite((flowbite) => {
+        // set the dropdown menu element
+        const $targetEl = document.getElementById('dropdownMenu');
+        // set the element that trigger the dropdown menu on click
+        const $triggerEl = document.getElementById('dropdownButton');
+        // options with default values
+        const options = {
+        placement: 'bottom',
+        offsetSkidding: 0,
+        offsetDistance: 10,
+        onHide: () => {
+            console.log('dropdown has been hidden');
+        },
+        onShow: () => {
+            console.log('dropdown has been shown');
+        }
+        };
+        if ($targetEl) {
+            /*
+            * targetEl: required
+            * triggerEl: required
+            * options: optional
+            */
+            const dropdown = new Dropdown($targetEl, $triggerEl, options);
+            // show the dropdown
+            dropdown.show();
+        }
+    })
+
 })
 </script>
 

@@ -1,35 +1,39 @@
 <script setup>
 import { onMounted } from 'vue'
-import { InputCounter } from 'flowbite'
+import { useFlowbite } from '~/composables/useFlowbite';
 onMounted(() => {
-   // set the target element of the input field
-   const $targetEl = document.getElementById('counter-input-example');
 
-    // optionally set the increment and decrement elements
-    const $incrementEl = document.getElementById('increment-button');
+    useFlowbite((flowbite) => {
+        // set the target element of the input field
+        const $targetEl = document.getElementById('counter-input-example');
 
-    const $decrementEl = document.getElementById('decrement-button');
+        // optionally set the increment and decrement elements
+        const $incrementEl = document.getElementById('increment-button');
 
-    // optional options with default values and callback functions
-    const options = {
-        minValue: 0,
-        maxValue: null, // infinite
-        onIncrement: () => {
-            console.log('input field value has been incremented');
-        },
-        onDecrement: () => {
-            console.log('input field value has been decremented');
+        const $decrementEl = document.getElementById('decrement-button');
+
+        // optional options with default values and callback functions
+        const options = {
+            minValue: 0,
+            maxValue: null, // infinite
+            onIncrement: () => {
+                console.log('input field value has been incremented');
+            },
+            onDecrement: () => {
+                console.log('input field value has been decremented');
+            }
+        };
+
+        const instanceOptions = {
+            id: 'counter-input-example',
+            override: true
+        };
+
+        if ($targetEl) {
+            const counterInput = new InputCounter($targetEl, $incrementEl, $decrementEl, options, instanceOptions);
         }
-    };
+    })
 
-    const instanceOptions = {
-        id: 'counter-input-example',
-        override: true
-    };
-
-    if ($targetEl) {
-        const counterInput = new InputCounter($targetEl, $incrementEl, $decrementEl, options, instanceOptions);
-    }
 })
 </script>
 
