@@ -1,10 +1,10 @@
 # Tailwind 4 Nuxt Starter
 
-[Nuxt](https://nuxt.com/) is a free and open-source JavaScript framework based on Vue.js that helps you develop modern web applications using SSR (server-side rendering) which provides a faster load, better SEO (search engine optimization), and better caching capabilities.
+Nuxt is a free and open-source JavaScript framework based on Vue.js that helps you develop modern web applications using SSR (server-side rendering) which provides a faster load, better SEO (search engine optimization), and better caching capabilities.
 
 The framework was inspired by Vercel's Next.js framework built with React and it is being used by large companies such as Ecosia, Upwork, NASA, Appsumo, and CDN JS.
 
-If you follow this guide you will learn how to install the latest version 3 of Nuxt with Tailwind CSS v4 and Flowbite and also show you how to use the TypeScript version.
+If you [follow this guide](https://flowbite.com/docs/getting-started/nuxt-js/) you will learn how to install the latest version 3 of Nuxt with Tailwind CSS v4 and Flowbite and also show you how to use the TypeScript version.
 
 ## Create a Nuxt project
 
